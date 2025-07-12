@@ -1,24 +1,16 @@
-// vote.js
-export function initVoting(questionId) {
-  const questionList = JSON.parse(localStorage.getItem("questions") || "[]");
-  const question = questionList.find(q => q.id == questionId);
 
-  question.answers.forEach((ans, i) => {
-    const btn = document.getElementById(`vote-btn-${i}`);
-    btn.addEventListener("click", () => {
-      ans.votes = (ans.votes || 0) + 1;
-      localStorage.setItem("questions", JSON.stringify(questionList));
-      document.getElementById(`vote-count-${i}`).innerText = ans.votes;
-    });
-  });
+export function renderNotificationBell() {
+  const unread = JSON.parse(localStorage.getItem("notifications") || "[]").filter(n => !n.read);
+  const bell = document.getElementById("notif-bell");
+  bell.innerHTML = `🔔 <span class="badge">${unread.length}</span>`;
 
-  // Accept answer
-  document.querySelectorAll(".accept-btn").forEach((btn, i) => {
-    btn.addEventListener("click", () => {
-      question.answers.forEach(a => (a.accepted = false));
-      question.answers[i].accepted = true;
-      localStorage.setItem("questions", JSON.stringify(questionList));
-      location.reload();
-    });
+  bell.addEventListener("click", () => {
+    const dropdown = document.getElementById("notif-dropdown");
+    dropdown.innerHTML = unread.map(n => `<div>${n.message}</div>`).join("");
+   
+    const all = JSON.parse(localStorage.getItem("notifications") || "[]");
+    all.forEach(n => (n.read = true));
+    localStorage.setItem("notifications", JSON.stringify(all));
+    renderNotificationBell(); 
   });
 }
