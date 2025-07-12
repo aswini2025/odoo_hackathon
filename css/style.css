@@ -89,6 +89,7 @@ body::-webkit-scrollbar-thumb {
 body.dark::-webkit-scrollbar-thumb {
   background-color: #90caf9;
 }
+<<<<<<< HEAD
 .ask-link {
   display: inline-block;
   margin: 10px 0 20px;
@@ -123,3 +124,35 @@ body.dark .question-preview {
 body.dark .view-link {
   color: #90caf9;
 }
+=======
+
+
+/*review*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #222;
+  color: white;
+  padding: 10px;
+}
+
+.badge {
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+}
+>>>>>>> e969c0df835f68ed262abea61339696289c91c06
