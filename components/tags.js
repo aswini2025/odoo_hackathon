@@ -1,5 +1,5 @@
 export function getTags(containerId) {
-  const tagList = JSON.parse(localStorage.getItem("tags") || `["JavaScript","React","CSS"]`);
+  const tagList = ["JavaScript", "React", "CSS", "Node", "API"];
   const container = document.getElementById(containerId);
 
   container.innerHTML = `<select id="tag-select" multiple>

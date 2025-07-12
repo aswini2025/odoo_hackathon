@@ -89,3 +89,37 @@ body::-webkit-scrollbar-thumb {
 body.dark::-webkit-scrollbar-thumb {
   background-color: #90caf9;
 }
+.ask-link {
+  display: inline-block;
+  margin: 10px 0 20px;
+  padding: 10px 18px;
+  background: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.question-preview {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background-color: #fafafa;
+}
+
+.view-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+body.dark .question-preview {
+  background-color: #1f1f1f;
+  border-color: #333;
+}
+
+body.dark .view-link {
+  color: #90caf9;
+}
