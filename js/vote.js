@@ -1,4 +1,4 @@
-// vote.js
+
 export function initVoting(questionId) {
   const questionList = JSON.parse(localStorage.getItem("questions") || "[]");
   const question = questionList.find(q => q.id == questionId);
@@ -12,7 +12,7 @@ export function initVoting(questionId) {
     });
   });
 
-  // Accept answer
+
   document.querySelectorAll(".accept-btn").forEach((btn, i) => {
     btn.addEventListener("click", () => {
       question.answers.forEach(a => (a.accepted = false));
